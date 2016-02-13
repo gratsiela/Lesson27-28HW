@@ -37,7 +37,7 @@ public class Klient {
 
 	void vnasianePariKredit(Bank bank, BankProduct.Credit credit, double suma) {
 		if (this.bank.equals(bank) && this.bankoviKrediti.contains(credit) && this.parichnaNalichnost >= suma
-				&& suma == credit.getMesechnaVnoskaKredit() && credit.getNalichnost() != 0) {
+				&& suma == credit.getMesechnaVnoskaKredit() && credit.getNalichnost() < 0) {
 			this.parichnaNalichnost -= suma;
 			bank.poluchavaVnoskaKredit(credit, suma);
 		}

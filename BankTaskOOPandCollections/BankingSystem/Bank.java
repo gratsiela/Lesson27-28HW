@@ -38,9 +38,10 @@ public class Bank {
 	void izplashtaneLihvitePoVsichkiDepoziti() {
 		for (Klient k : this.klienti) {
 			for (BankProduct.Deposit d : k.getBankoviDepoziti()) {
-				if (d.getNalichnost() != 0) {
+				if (d.getNalichnost() > 0 && d.getOstavashtPeriodVMeseci()>0) {
 					this.parichnaNalichnost -= d.getMesechnaLihvaDepozit();
 					d.setNalichnost(d.getNalichnost() + d.getMesechnaLihvaDepozit());
+					d.setOstavashtPeriodVMeseci(d.getOstavashtPeriodVMeseci()-1);
 				}
 			}
 		}

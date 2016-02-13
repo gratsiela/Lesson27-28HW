@@ -68,8 +68,16 @@ public abstract class BankProduct {
 	}
 
 	public static class Deposit extends BankProduct {
+		private int ostavashtPeriodVMeseci;
 		public Deposit(String ime, double godishenLihvenProcent, int periodNaProdukta, double suma) {
 			super(ime, false, godishenLihvenProcent, periodNaProdukta, suma);
+			this.ostavashtPeriodVMeseci=periodNaProdukta;
+		}
+		public int getOstavashtPeriodVMeseci() {
+			return ostavashtPeriodVMeseci;
+		}
+		public void setOstavashtPeriodVMeseci(int ostavashtPeriodVMeseci) {
+			this.ostavashtPeriodVMeseci = ostavashtPeriodVMeseci;
 		}
 	}
 
